@@ -13,6 +13,9 @@
 		};
 	
 		textfox.url = "github:adriankarlen/textfox";
+		catppuccin-textfox.url = "github:catppuccin/firefox";
+		catppuccin-textfox.flake = false;
+		
 	};
 
 	outputs = { self, nixpkgs, home-manager, ... } @ inputs: 
@@ -21,6 +24,11 @@
 	{
 	#Entrypoint for nix config
 		nixosConfigurations.nixos = lib.nixosSystem {
+			system = system;
+
+			specialArgs = {
+				inherit inputs;
+			};
 			modules = [
 			./system/configuration.nix
 

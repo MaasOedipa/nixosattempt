@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "catppuccin-textfox": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1689695410,
+        "narHash": "sha256-8yZA3Amus00xORmxDJxgKmbH4zou+OpMfSYV7vMS4P8=",
+        "owner": "catppuccin",
+        "repo": "firefox",
+        "rev": "1aa345a3312f0a649068418679ceb81a9c599d36",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "firefox",
+        "type": "github"
+      }
+    },
     "firefox-addons": {
       "inputs": {
         "nixpkgs": [
@@ -78,6 +94,7 @@
     },
     "root": {
       "inputs": {
+        "catppuccin-textfox": "catppuccin-textfox",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "textfox": "textfox"
