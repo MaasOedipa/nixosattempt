@@ -4,5 +4,6 @@
 		./packages.nix
 		./wallpaper.nix
 		./textfox.nix
+		./firefox
 	];
 }
