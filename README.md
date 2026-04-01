@@ -2,7 +2,7 @@ Min egen nixos attempt til min p50
 
 Bruger følgende sources
 
-[https://nixos-and-flakes.thiscute.world/](nixbook)
+[nix book](https://nixos-and-flakes.thiscute.world/)
 [https://github.com/gpskwlkr/nixos-hyprland-flake](hyprland flake)
 
 
