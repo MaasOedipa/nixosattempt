@@ -13,5 +13,7 @@
 		waybar
 		power-profiles-daemon
 		wofi
+		grim
+		slurp
 	];
 }
