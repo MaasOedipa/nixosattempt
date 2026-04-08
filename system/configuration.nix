@@ -5,6 +5,9 @@
 { config, pkgs, ... }:
 
 {
+
+  nix.settings.warn-dirty = false;
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
