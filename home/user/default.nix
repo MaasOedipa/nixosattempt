@@ -5,5 +5,6 @@
 		./wallpaper.nix
 		./textfox.nix
 		./firefox
+		./nvim.nix
 	];
 }

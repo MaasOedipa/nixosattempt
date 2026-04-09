@@ -15,6 +15,11 @@
 		textfox.url = "github:adriankarlen/textfox";
 		catppuccin-textfox.url = "github:catppuccin/firefox";
 		catppuccin-textfox.flake = false;
+
+		nvim-config = {
+			url = "github:MaasOedipa/kickstart.nvim";
+			flake = false;
+		};
 		
 	};
 

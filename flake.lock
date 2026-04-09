@@ -92,11 +92,28 @@
         "type": "github"
       }
     },
+    "nvim-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1774694182,
+        "narHash": "sha256-UAfdle1ub6LqKkEqlvOTL7EYX2mHNLY0PX5pJBAQn10=",
+        "owner": "MaasOedipa",
+        "repo": "kickstart.nvim",
+        "rev": "a4b57654c9b6aebe9271fd366b8442e177124378",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MaasOedipa",
+        "repo": "kickstart.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "catppuccin-textfox": "catppuccin-textfox",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "nvim-config": "nvim-config",
         "textfox": "textfox"
       }
     },
