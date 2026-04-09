@@ -99,21 +99,7 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  	nerd-fonts.noto
-	nerd-fonts.monofur
-	home-manager
-  	wl-clipboard
-	gh
-  	git
- 	kitty
- 	neovim
-        vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-        wget
-	cargo
-	gcc
-  ];
-
+  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
