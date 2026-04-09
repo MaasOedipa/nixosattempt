@@ -2,7 +2,6 @@
 
 {
 	networking.hostName = "nixos"; 
-	networking.wireless.enable = true;
 
 	networking.networkmanager.enable = true;
 
@@ -11,10 +10,12 @@
 		homewifi = {
 			connection = {
 				id = "homewifi";
-				type = "wifi":
+				type = "wifi";
+				autoconnect = true;
 			};
 			wifi = {
 				ssid = "Airties_Air4960R_7VCH";
+				mode = "infracstructure";
 			};
 			wifi-security = {
 				key-mgmt = "wpa-psk";
