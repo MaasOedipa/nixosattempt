@@ -3,7 +3,6 @@
 
 	inputs = {
 		# The official NixOS package soruce
-
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
 		home-manager = {
@@ -13,8 +12,10 @@
 		};
 	
 		textfox.url = "github:adriankarlen/textfox";
-		catppuccin-textfox.url = "github:catppuccin/firefox";
-		catppuccin-textfox.flake = false;
+		catppuccin-textfox = {
+			url =  "github:catppuccin/firefox";
+			flake = false;
+		};
 
 		nvim-config = {
 			url = "github:MaasOedipa/kickstart.nvim";
