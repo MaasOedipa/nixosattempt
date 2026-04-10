@@ -6,5 +6,6 @@
 		./firefox
 		./nvim.nix
 		./config.nix
+		./nixcord.nix
 	];
 }
