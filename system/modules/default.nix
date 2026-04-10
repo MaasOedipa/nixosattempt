@@ -1,11 +1,9 @@
-{ ... }:
-
-{
-	imports = [
-	./hyprland.nix
-	./firefox.nix
-	./networking.nix
-	./packages.nix
-	];
-
+{...}: {
+  imports = [
+    ./hyprland.nix
+    ./firefox.nix
+    ./networking.nix
+    ./packages.nix
+    ./nano.nix
+  ];
 }

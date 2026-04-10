@@ -1,8 +1,11 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
-	inputs.textfox.homeManagerModules.default 
+    inputs.textfox.homeManagerModules.default
   ];
 
   textfox = {

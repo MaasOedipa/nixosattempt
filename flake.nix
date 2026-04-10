@@ -1,57 +1,63 @@
 {
-	description = "My simple NixOS flake";
+  description = "My simple NixOS flake";
 
-	inputs = {
-		# The official NixOS package soruce
-		nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+  inputs = {
+    # The official NixOS package soruce
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
-		home-manager = {
-			#Homemanager url
-			url = "github:nix-community/home-manager/release-25.11";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-	
-		textfox.url = "github:adriankarlen/textfox";
-		catppuccin-textfox = {
-			url =  "github:catppuccin/firefox";
-			flake = false;
-		};
+    home-manager = {
+      #Homemanager url
+      url = "github:nix-community/home-manager/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-		nvim-config = {
-			url = "github:MaasOedipa/kickstart.nvim";
-			flake = false;
-		};
+    textfox.url = "github:adriankarlen/textfox";
+    catppuccin-textfox = {
+      url = "github:catppuccin/firefox";
+      flake = false;
+    };
 
-		nixcord.url = "github:FlameFlag/nixcord";
-		
-	};
+    nvim-config = {
+      url = "github:MaasOedipa/kickstart.nvim";
+      flake = false;
+    };
 
-	outputs = { self, nixpkgs, home-manager, ... } @ inputs: 
-	let  lib = nixpkgs.lib; system = "x86_64-linux"; pkgs = nixpkgs.legacyPackages.${system};
-	in 
-	{
-	#Entrypoint for nix config
-		nixosConfigurations.nixos = lib.nixosSystem {
-			system = system;
+    nixcord.url = "github:FlameFlag/nixcord";
+  };
 
-			specialArgs = {
-				inherit inputs;
-			};
-			modules = [
-			./system/configuration.nix
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: let
+    lib = nixpkgs.lib;
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+  in {
+    formatter.${system} = pkgs.alejandra;
 
-			home-manager.nixosModules.home-manager 
-			{
-				home-manager.useGlobalPkgs = true;
-				home-manager.useUserPackages = true;
+    #Entrypoint for nix config
+    nixosConfigurations.nixos = lib.nixosSystem {
+      system = system;
 
-				home-manager.extraSpecialArgs = {
-					inherit inputs;
-				};
-				home-manager.users.pnix = import ./home/home.nix;
-			}
-			];
-	    	};
-	     };
+      specialArgs = {
+        inherit inputs;
+      };
+      modules = [
+        ./system/configuration.nix
+
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+
+          home-manager.extraSpecialArgs = {
+            inherit inputs;
+          };
+          home-manager.users.pnix = import ./home/home.nix;
+        }
+      ];
+    };
+  };
 }
-

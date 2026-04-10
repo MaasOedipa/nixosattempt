@@ -1,8 +1,11 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
-  	./user
+    ./user
   ];
   # TODO please change the username & home directory to your own
   home.username = "pnix";
@@ -39,14 +42,14 @@
   programs.git = {
     enable = true;
     settings = {
-    user.name = "MaasOedipa";
-    user.email = "zdr560@alumni.ku.dk";
-    core.editor = "nvim";
+      user.name = "MaasOedipa";
+      user.email = "zdr560@alumni.ku.dk";
+      core.editor = "nvim";
     };
   };
 
   programs.home-manager = {
-	  enable = true;
+    enable = true;
   };
 
   programs.bash = {
@@ -55,6 +58,7 @@
     # TODO add your custom bashrc here
     bashrcExtra = ''
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+      export EDITOR='nvim'
     '';
 
     # set some aliases, feel free to add more or remove some
@@ -74,4 +78,3 @@
   # the home Manager release notes for a list of state version
   # changes in each release.
 }
-

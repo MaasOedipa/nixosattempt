@@ -1,6 +1,9 @@
-{ inputs, config, lib, ... }:
-
 {
+  inputs,
+  config,
+  lib,
+  ...
+}: {
   programs.firefox = {
     enable = true;
 

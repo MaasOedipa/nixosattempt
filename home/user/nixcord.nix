@@ -1,12 +1,15 @@
-{ config, pkgs, inputs, ... }:
-
 {
-	imports = [
- 		inputs.nixcord.homeModules.nixcord
-	];
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    inputs.nixcord.homeModules.nixcord
+  ];
 
-	programs.nixcord = {
-		enable = true;
-		discord.vencord.enable = true;
-	};
+  programs.nixcord = {
+    enable = true;
+    discord.vencord.enable = true;
+  };
 }

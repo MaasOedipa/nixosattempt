@@ -1,12 +1,13 @@
-{ config, pkgs, ... }:
-
-let
+{
+  config,
+  pkgs,
+  ...
+}: let
   # Wallpaper path in the repo
   wallpaper = ./config/wallpapers/wall.png;
-in
-{
+in {
   imports = [
-  ./user
+    ./user
   ];
 
   # Enable hyprpaper service declaratively
@@ -15,10 +16,10 @@ in
 
     settings = {
       # Preload wallpapers into memory
-      preload = [ "${wallpaper}" ];
+      preload = ["${wallpaper}"];
 
       # Set wallpaper per monitor
-      wallpaper = [ "eDP-1,${wallpaper}" ];
+      wallpaper = ["eDP-1,${wallpaper}"];
 
       # Disable splash screen
       splash = false;

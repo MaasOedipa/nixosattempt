@@ -1,8 +1,5 @@
-{pkgs, ... }:
-
-{
-
-home.packages = with pkgs; [
+{pkgs, ...}: {
+  home.packages = with pkgs; [
     fastfetch
     lazygit
 
@@ -16,8 +13,7 @@ home.packages = with pkgs; [
 
     btop
 
-     
     luarocks
     libinput
-    ];
+  ];
 }
