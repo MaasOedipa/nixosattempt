@@ -21,6 +21,8 @@
 			url = "github:MaasOedipa/kickstart.nvim";
 			flake = false;
 		};
+
+		nixcord.url = "github:FlameFlag/nixcord";
 		
 	};
 
