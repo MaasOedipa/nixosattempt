@@ -1,7 +1,6 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   networking.hostName = "nixos";
 
@@ -22,7 +21,7 @@
       };
       wifi-security = {
         key-mgmt = "wpa-psk";
-        psk = "fchwtc7387";
+        psk = "";
       };
 
       ipv4.method = "auto";
